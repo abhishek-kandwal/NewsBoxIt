@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>meCustomizer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    /** toggle function */
+
+    function pageContent(value) {
+        if (value == 0) {
+            document.getElementById('content_div0').style.display = "block";
+            document.getElementById('content_div1').style.display = "none";
+            document.getElementById('content_div2').style.display = "none";
+            document.getElementById('content_div3').style.display = "none";
+            document.getElementById('content_div4').style.display = "none";
+            document.getElementById('content_div5').style.display = "none";
+            document.getElementById('content_div6').style.display = "none";
+            document.getElementById('content_div7').style.display = "none";
+            document.getElementById('content_div8').style.display = "none";
+        }
+        else if (value == 1) {
+            document.getElementById('content_div0').style.display = "none";
+            document.getElementById('content_div1').style.display = "block";
+            document.getElementById('content_div2').style.display = "none";
+            document.getElementById('content_div3').style.display = "none";
+            document.getElementById('content_div4').style.display = "none";
+            document.getElementById('content_div5').style.display = "none";
+            document.getElementById('content_div6').style.display = "none";
+            document.getElementById('content_div7').style.display = "none";
+            document.getElementById('content_div8').style.display = "none";
+        }
+        else if (value == 2) {
+            document.getElementById('content_div0').style.display = "none";
+            document.getElementById('content_div1').style.display = "none";
+            document.getElementById('content_div2').style.display = "block";
+            document.getElementById('content_div3').style.display = "none";
+            document.getElementById('content_div4').style.display = "none";
+            document.getElementById('content_div5').style.display = "none";
+            document.getElementById('content_div6').style.display = "none";
+            document.getElementById('content_div7').style.display = "none";
+            document.getElementById('content_div8').style.display = "none";
+        }
+        else if (value == 3) {
+            document.getElementById('content_div0').style.display = "none";
+            document.getElementById('content_div1').style.display = "none";
+            document.getElementById('content_div2').style.display = "none";
+            document.getElementById('content_div3').style.display = "block";
+            document.getElementById('content_div4').style.display = "none";
+            document.getElementById('content_div5').style.display = "none";
+            document.getElementById('content_div6').style.display = "none";
+            document.getElementById('content_div7').style.display = "none";
+            document.getElementById('content_div8').style.display = "none";
+        }
+        else if (value == 4) {
+            document.getElementById('content_div0').style.display = "none";
+            document.getElementById('content_div1').style.display = "none";
+            document.getElementById('content_div2').style.display = "none";
+            document.getElementById('content_div3').style.display = "none";
+            document.getElementById('content_div4').style.display = "block";
+            document.getElementById('content_div5').style.display = "none";
+            document.getElementById('content_div6').style.display = "none";
+            document.getElementById('content_div7').style.display = "none";
+            document.getElementById('content_div8').style.display = "none";
+        }else if(value == 5){
+            document.getElementById('content_div0').style.display = "none";
+            document.getElementById('content_div1').style.display = "none";
+            document.getElementById('content_div2').style.display = "none";
+            document.getElementById('content_div3').style.display = "none";
+            document.getElementById('content_div4').style.display = "none";
+            document.getElementById('content_div5').style.display = "block";
+            document.getElementById('content_div6').style.display = "none";
+            document.getElementById('content_div7').style.display = "none";
+            document.getElementById('content_div8').style.display = "none";
+
+        }else if(value == 6){
+            document.getElementById('content_div0').style.display = "none";
+            document.getElementById('content_div1').style.display = "none";
+            document.getElementById('content_div2').style.display = "none";
+            document.getElementById('content_div3').style.display = "none";
+            document.getElementById('content_div4').style.display = "none";
+            document.getElementById('content_div5').style.display = "none";
+            document.getElementById('content_div6').style.display = "block";
+            document.getElementById('content_div7').style.display = "none";
+            document.getElementById('content_div8').style.display = "none";
+        }else if(value == 7){
+            document.getElementById('content_div0').style.display = "none";
+            document.getElementById('content_div1').style.display = "none";
+            document.getElementById('content_div2').style.display = "none";
+            document.getElementById('content_div3').style.display = "none";
+            document.getElementById('content_div4').style.display = "none";
+            document.getElementById('content_div5').style.display = "none";
+            document.getElementById('content_div6').style.display = "none";
+            document.getElementById('content_div7').style.display = "block";
+            document.getElementById('content_div8').style.display = "none";
+        }else if(value == 8){
+            document.getElementById('content_div0').style.display = "none";
+            document.getElementById('content_div1').style.display = "none";
+            document.getElementById('content_div2').style.display = "none";
+            document.getElementById('content_div3').style.display = "none";
+            document.getElementById('content_div4').style.display = "none";
+            document.getElementById('content_div5').style.display = "none";
+            document.getElementById('content_div6').style.display = "none";
+            document.getElementById('content_div7').style.display = "none";
+            document.getElementById('content_div8').style.display = "block";
+        }
+    }
+
+
+// this function will create the Addons
+
+var new_link = [];
+var indexer = 0;
+    function ADDONS_creation() {
+        new_link[indexer] = document.getElementById('link_box_').value; // getting the input text (website name)
+        var add_id = document.getElementById('all_box_here'); // this is the div where all the buttons will added
+        var new_btn = document.createElement("BUTTON"); // creating the button in which the website will get added 
+        var anchor_tag = document.createElement("a"); // creating the element to create the button a anchor tag
+        var text = document.createTextNode(new_link[indexer]);       // Create a text node which will get added to the button
+        new_btn.appendChild(text);                        // here appending the text to the button
+        new_btn.setAttribute('onclick','newweb(new_link['+indexer+'])');       // setting attributes in the anchor tag  
+        new_btn.style.marginLeft="5px";                  // styling the button
+        new_btn.style.height="30px";                     // styling the button
+ 
+        anchor_tag.appendChild(new_btn);                // appending the button to the anchor tag
+        add_id.appendChild(anchor_tag);                  // adding the button in the document
+        indexer++;
+        alert('added successfully');                   // giving the popup on success of adding the button
+        alert(new_link);
+    }
+
+    // this function is for the onclick event which will open the website
+    var link_index = 5;
+    function newweb(website){
+        
+       
+    var header_append = document.getElementById('header_links'); // this will grab the id where we want to open our website
+    var a_link_name = document.createElement('a');
+    
+    a_link_name.setAttribute('onclick',"pageContent("+ link_index + ")"); 
+    var li_link_box = document.createElement('li'); 
+    var link_text_node = document.createTextNode(website);
+    // appending every above node
+    a_link_name.appendChild(link_text_node);
+    li_link_box.appendChild(a_link_name);
+    header_append.appendChild(li_link_box);
+    
+    // iframe creation
+    var iframe_tag = document.createElement('iframe'); // will create the iframe tag for the website
+    iframe_tag.setAttribute('src','https://'+website); // adding website link to the iframe
+    iframe_tag.setAttribute('class','iframe_sty') // giving the class style
+    var iframe_divs_1 = document.getElementById('main_div_box'); // where all the iframes will add
+
+
+   // creating new div
+   var iframe_div_area_1 = document.createElement('div');
+   iframe_div_area_1.setAttribute('id','content_div'+ link_index); 
+   iframe_div_area_1.setAttribute('class','content_div'+ link_index);
+   
+   var iframe_div_area_2 = document.createElement('div');
+   iframe_div_area_2.setAttribute('style','overflow:hidden;');  
+   iframe_div_area_2.setAttribute('class','col-sm-12');
+
+   // appending the frames
+   iframe_div_area_2.appendChild(iframe_tag);
+   iframe_div_area_1.appendChild(iframe_div_area_2);
+   iframe_divs_1.appendChild(iframe_div_area_1);
+   var index_link = link_index;
+   link_index++;
+    // down code will hide all the other tab
+    pageContent(index_link);
+    // setting link_index == 5
+    
+    if(link_index==9){
+        link_index = 5;
+    }
+    }
+</script>
+
+<body>
+    <div class="container-fluid">
+        <!-- app header-->
+        <header>
+            <div class="row">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <ul id="header_links" class="nav navbar-nav">
+                            <li><a onclick="pageContent(0)">HOME</a></li>
+                            <li><a onclick="pageContent(1)">ADDON'S</a></li>
+                            <li><a onclick="pageContent(2)">Hindustan times</a></li>
+                            <li><a onclick="pageContent(3)">bbc</a></li>
+                            <li><a onclick="pageContent(4)">timesofindia</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-left" action="/action_page.php">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="search">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" onclick="search()">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- header ends here-->
+        <!-- content here-->
+        <div class="row" id="main_div_box">
+            <!-- div 1-->
+            <div id="content_div0" class="content_div0">
+                <div class="col-sm-12" style="overflow:hidden;">
+                    <h1>Add your desired website! </h1>
+                    <h4>Customize it according to you</h4>
+                    <div class="content_adding_area">
+                        <div class="content_add_btn">
+                            <div class="box_style">
+                                <form>
+                                    <input id="link_box_" type="text" class="input_style" required
+                                        placeholder="add your link here">
+                                </form>
+                                <button class="btn btn-default button_style_margin"
+                                    onclick="ADDONS_creation()">ADD</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- div 1-->
+            <div id="content_div1" class="content_div1">
+                <div class="col-sm-12" style="overflow:hidden;">
+                    <h1>your added links here</h1>
+                    <div id="all_box_here">
+
+                    </div>
+                </div>
+            </div>
+            <!-- div 1-->
+            <div id="content_div2" class="content_div2">
+                <div class="col-sm-12" style="overflow:hidden;">
+                    <iframe src="https://www.hindustantimes.com/" class="iframe_sty"></iframe>
+                </div>
+            </div>
+
+            <!-- div 2-->
+            <div id="content_div3" class="content_div3">
+                <div class="col-sm-12" style="overflow:hidden;">
+                    <iframe src="https://www.bbc.com" class="iframe_sty"></iframe>
+                </div>
+            </div>
+
+            <!-- div 3-->
+            <div id="content_div4" class="content_div4">
+                <div class="col-sm-12" style="overflow:hidden;">
+                    <iframe src="https://timesofindia.indiatimes.com/" class="iframe_sty"></iframe>
+                </div>
+            </div>
+            <!-- new div here -->
+
+        </div>
+
+        <!-- content ends here-->
+    </div>
+
+</body>
+
+</html>
